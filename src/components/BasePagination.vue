@@ -81,7 +81,6 @@ export default {
       currentPage: 1,
     };
   },
-  computed: {},
   mounted() {
     this.setCurrentPageNumber();
   },

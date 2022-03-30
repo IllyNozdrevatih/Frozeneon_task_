@@ -25,7 +25,7 @@ export default {
       modalProps: null,
     };
   },
-  created: function () {
+  created() {
     eventBus.$on("open-modal", (data) => {
       this.modalProps = data.props;
       this.modalComponent = data.component;
