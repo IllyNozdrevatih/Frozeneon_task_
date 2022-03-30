@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "PackegeCard",
+  name: "PackageCardModal",
   props: {
     modalProp: {
       type: Object,
