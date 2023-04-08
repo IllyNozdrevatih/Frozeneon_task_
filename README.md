@@ -1,6 +1,6 @@
-# forezoe_v16
+# Frozeneon
 
-### Node 16.13.2
+## Node v14.17.5
 
 ## Project setup
 ```

@@ -52,7 +52,7 @@
         {{ packageData }}
       </pre>
     </div>
-    <div v-if="packageList.length && packageData === null">
+    <div v-if="packageData === null && packageList.length">
       <div class="position-relative">
         <table class="table">
           <thead>
@@ -123,9 +123,13 @@ export default {
       await this.$store.dispatch("package/getPackageList", { pageNum });
       eventBus.$emit("close-loader");
     },
-    openPackageModal(props) {
+    async openPackageModal(packageItem) {
+      const packageName = packageItem.name
+      const packageType = packageItem.type
+
+      const response = await this.$store.dispatch("package/getPackageByName", { packageName, packageType });
       eventBus.$emit("open-modal", {
-        props: props,
+        props: response,
         component: PackageCardModal,
       });
     },

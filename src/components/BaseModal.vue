@@ -25,7 +25,7 @@ export default {
       modalProps: null,
     };
   },
-  created() {
+  created: function () {
     eventBus.$on("open-modal", (data) => {
       this.modalProps = data.props;
       this.modalComponent = data.component;
@@ -61,12 +61,18 @@ export default {
 
   background-color: rgba(30, 30, 30, 0);
 
-  .base-modal {
-    width: 100%;
-    max-width: 600px;
-    max-height: 600px;
-    padding: 15px;
+  .base-modal { 
+    width: 600px;
+    height: 400px;
     border-radius: 10px;
+
+    @media (max-width: 700px) {
+      width: 400px;
+    }
+
+    @media (max-width: 500px) {
+      width: 300px;
+    }
   }
 
   &--active {

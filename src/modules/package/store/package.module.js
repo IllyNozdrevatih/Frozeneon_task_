@@ -37,5 +37,17 @@ export const packageModule = {
         console.log(e);
       }
     },
+    async getPackageByName({ commit }, { packageType, packageName }) {
+      try {
+        const { data } = await $http.get(
+          `/packages/${packageType}/${packageName}`
+        );
+        
+        return data
+      } catch (e) {        
+        console.log(e);
+        return null
+      }
+    },
   },
 };
