@@ -1,6 +1,6 @@
 # Frozeneon
 
-## Node v14.17.5
+## Node v14.18.0
 
 ## Project setup
 ```
